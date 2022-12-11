@@ -1,10 +1,8 @@
-﻿using System;
-using Assets._Project._Scripts.World.Components;
+﻿using Assets._Project._Scripts.World.Components;
 using Assets._Project._Scripts.World.Generators.Noise;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets._Project._Scripts.World.Aspects
 {
@@ -38,7 +36,11 @@ namespace Assets._Project._Scripts.World.Aspects
                 0,
                 _heightGenerator.ValueRO.PerlinNoiseSource);
 
-            return StandardNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), _heightGenerator.ValueRO.StandardNoiseFilterValues, perlinNoiseEvaluator);
+            float standardNoisedValues = StandardNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), _heightGenerator.ValueRO.StandardNoiseFilterValues, perlinNoiseEvaluator);
+            float rigidNoisedValues = RigidNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), _heightGenerator.ValueRO.RigidNoiseFilterValues, perlinNoiseEvaluator) 
+                                      * standardNoisedValues;
+
+            return standardNoisedValues + rigidNoisedValues;
         }
     }
 }

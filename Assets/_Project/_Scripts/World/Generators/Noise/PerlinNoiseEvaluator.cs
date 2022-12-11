@@ -173,7 +173,7 @@ namespace Assets._Project._Scripts.World.Generators.Noise
 
             if (seed != 0)
             {
-                NativeArray<byte> F = new NativeArray<byte>(4, Allocator.Temp);
+                NativeArray<byte> F = new(4, Allocator.Temp);
                 UnpackLittleUint32(seed, ref F);
 
                 for (int i = 0; i < _source.Length; i++)

@@ -167,19 +167,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ee0cc0a6b7a9441af1c9d2d6141032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: 60
+  worldSize: 500
   worldTilePrefab: {fileID: 6898869174114694840, guid: dad980d72936e3b41b90f43af72cb891,
     type: 3}
   randomSeed: 256757
   noiseFilter:
     NumberOfLayers: 5
-    Strength: 50
-    MinValue: 35
+    Strength: 4
+    MinValue: 2.5
     MaxValue: 100
     Center:
       x: 0
       y: 0
       z: 0
-    BaseRoughness: 0.001
-    Roughness: 10
+    BaseRoughness: 0.005
+    Roughness: 4
     Persistance: 0.2
+  rigidNoiseFilter:
+    NumberOfLayers: 4
+    Strength: 7
+    MinValue: 2
+    MaxValue: 100
+    Center:
+      x: 0
+      y: 50
+      z: 0
+    BaseRoughness: 0.003
+    Roughness: 5
+    Persistance: 0.7
+    WeightMultiplier: 0.8

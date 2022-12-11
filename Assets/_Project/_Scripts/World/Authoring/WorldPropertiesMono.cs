@@ -13,6 +13,7 @@ namespace Assets._Project._Scripts.World.Authoring
         public GameObject worldTilePrefab;
         public uint randomSeed;
         public StandardNoiseFilterValues noiseFilter;
+        public RigidNoiseFilterValues rigidNoiseFilter;
     }
 
     public class WorldPropertiesBaker : Baker<WorldPropertiesMono>
@@ -29,7 +30,6 @@ namespace Assets._Project._Scripts.World.Authoring
             {
                 Value = Random.CreateFromIndex(authoring.randomSeed)
             });
-
 
             int[] source = new[]
             {
@@ -50,7 +50,8 @@ namespace Assets._Project._Scripts.World.Authoring
             AddComponent(new HeightGeneratorComponent
             {
                 StandardNoiseFilterValues = authoring.noiseFilter,
-                PerlinNoiseSource = new NativeArray<int>(source, Allocator.Persistent)
+                RigidNoiseFilterValues = authoring.rigidNoiseFilter,
+                PerlinNoiseSource = new NativeArray<int>(source, Allocator.Persistent),
             });
         }
     }
