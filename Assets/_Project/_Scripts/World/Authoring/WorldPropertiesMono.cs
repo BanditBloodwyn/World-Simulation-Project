@@ -3,7 +3,6 @@ using Assets._Project._Scripts.World.Generators.Noise;
 using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
-using Random = Unity.Mathematics.Random;
 
 namespace Assets._Project._Scripts.World.Authoring
 {
@@ -11,7 +10,6 @@ namespace Assets._Project._Scripts.World.Authoring
     {
         public int worldSize;
         public GameObject worldTilePrefab;
-        public uint randomSeed;
         public StandardNoiseFilterValues noiseFilter;
         public RigidNoiseFilterValues rigidNoiseFilter;
     }
@@ -26,12 +24,7 @@ namespace Assets._Project._Scripts.World.Authoring
                 WorldTilePrefab = GetEntity(authoring.worldTilePrefab)
             });
 
-            AddComponent(new WorldRandomComponent
-            {
-                Value = Random.CreateFromIndex(authoring.randomSeed)
-            });
-
-            int[] source = new[]
+            int[] source = 
             {
                 151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142,
                 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203,

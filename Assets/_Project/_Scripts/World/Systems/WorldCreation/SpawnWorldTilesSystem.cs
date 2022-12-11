@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components;
-using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets._Project._Scripts.World.Systems
 {
