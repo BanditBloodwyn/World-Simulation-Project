@@ -1,5 +1,4 @@
 ﻿using Assets._Project._Scripts.World.Components;
-using Assets._Project._Scripts.World.Generators.Noise;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -18,28 +17,15 @@ namespace Assets._Project._Scripts.World.Aspects
         public int WorldSize => _worldProperties.ValueRO.WorldSize;
 
         public Entity WorldTilePrefab => _worldProperties.ValueRO.WorldTilePrefab;
-
-        public static UniformScaleTransform GetWorldTileTransform(int x, int y, float random)
+        
+        public static UniformScaleTransform GetWorldTileTransform(float x, float y, float z)
         {
             return new UniformScaleTransform
             {
-                Position = new float3(x, random, y),
+                Position = new float3(x, y, z),
                 Rotation = new quaternion(),
                 Scale = 1f
             };
-        }
-
-        public float GetNoisedTileProperty(int x, int y)
-        {
-            PerlinNoiseEvaluator perlinNoiseEvaluator = new PerlinNoiseEvaluator(
-                0,
-                _heightGenerator.ValueRO.PerlinNoiseSource);
-
-            float standardNoisedValues = StandardNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), _heightGenerator.ValueRO.StandardNoiseFilterValues, perlinNoiseEvaluator);
-            float rigidNoisedValues = RigidNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), _heightGenerator.ValueRO.RigidNoiseFilterValues, perlinNoiseEvaluator) 
-                                      * standardNoisedValues;
-
-            return standardNoisedValues + rigidNoisedValues;
         }
     }
 }
