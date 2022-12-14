@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Assets/_Project/_Scripts/ScriptableObjects.meta
+/Assets/_Project/_Scripts/ScriptableObjects/NoiseParameters.cs.meta
+/Assets/_Project/_Scripts/ScriptableObjects/NoiseParameters.cs
+/Assets/_Project/_Scripts/ScriptableObjects
