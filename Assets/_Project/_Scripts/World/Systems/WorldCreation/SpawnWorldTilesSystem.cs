@@ -1,5 +1,6 @@
 ﻿using Assets._Project._Scripts.World.Aspects;
-using Assets._Project._Scripts.World.Components;
+using Assets._Project._Scripts.World.Components.WorldCreator;
+using Assets._Project._Scripts.World.Components.WorldTile;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;

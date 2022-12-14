@@ -1,7 +1,8 @@
 ﻿using Assets._Project._Scripts.Core.Extentions;
 using Assets._Project._Scripts.Core.Types;
 using Assets._Project._Scripts.World.Aspects;
-using Assets._Project._Scripts.World.Components;
+using Assets._Project._Scripts.World.Components.WorldCreator;
+using Assets._Project._Scripts.World.Components.WorldTile;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;

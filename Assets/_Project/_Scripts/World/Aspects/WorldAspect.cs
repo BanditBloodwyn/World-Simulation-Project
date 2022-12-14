@@ -1,4 +1,4 @@
-﻿using Assets._Project._Scripts.World.Components;
+﻿using Assets._Project._Scripts.World.Components.WorldCreator;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -12,7 +12,6 @@ namespace Assets._Project._Scripts.World.Aspects
         private readonly TransformAspect _transformAspect;
 
         private readonly RefRO<WorldPropertiesComponent> _worldProperties;
-        private readonly RefRW<HeightGeneratorComponent> _heightGenerator;
 
         public int WorldSize => _worldProperties.ValueRO.WorldSize;
 

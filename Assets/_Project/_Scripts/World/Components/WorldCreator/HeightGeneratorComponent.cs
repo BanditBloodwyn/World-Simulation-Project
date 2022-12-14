@@ -1,7 +1,7 @@
 ﻿using Assets._Project._Scripts.World.Generators.Noise;
 using Unity.Entities;
 
-namespace Assets._Project._Scripts.World.Components
+namespace Assets._Project._Scripts.World.Components.WorldCreator
 {
     public struct HeightGeneratorComponent : IComponentData
     {
