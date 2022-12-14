@@ -170,8 +170,7 @@ MonoBehaviour:
   worldSize: 500
   worldTilePrefab: {fileID: 6898869174114694840, guid: dad980d72936e3b41b90f43af72cb891,
     type: 3}
-  randomSeed: 256757
-  noiseFilter:
+  standardNoiseFilter:
     NumberOfLayers: 5
     Strength: 4
     MinValue: 2.5

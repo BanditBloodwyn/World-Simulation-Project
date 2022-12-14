@@ -32,7 +32,6 @@ namespace Assets._Project._Scripts.World.Systems
             Entity worldPropertiesEntity = SystemAPI.GetSingletonEntity<WorldPropertiesComponent>();
             WorldAspect worldAspect = SystemAPI.GetAspectRW<WorldAspect>(worldPropertiesEntity);
 
-
             EntityCommandBuffer entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
 
             for (int x = 0; x < worldAspect.WorldSize; x++)

@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Assets._Project._Scripts.Core.Extentions;
+﻿using Assets._Project._Scripts.Core.Extentions;
 using Assets._Project._Scripts.Core.Types;
 using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components;
@@ -31,7 +30,7 @@ namespace Assets._Project._Scripts.World.Systems
 
             SimpleTuple<float, float> minMax = GetMinMaxHeights(ref state);
 
-            EntityCommandBuffer entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
+            EntityCommandBuffer entityCommandBuffer = new(Allocator.Temp);
 
             foreach (WorldTileAspect tile in SystemAPI.Query<WorldTileAspect>())
             {
@@ -50,7 +49,7 @@ namespace Assets._Project._Scripts.World.Systems
             Entity worldPropertiesEntity = SystemAPI.GetSingletonEntity<WorldPropertiesComponent>();
             WorldAspect worldAspect = SystemAPI.GetAspectRW<WorldAspect>(worldPropertiesEntity);
 
-            NativeArray<float> heights = new NativeArray<float>(worldAspect.WorldSize * worldAspect.WorldSize, Allocator.Temp);
+            NativeArray<float> heights = new(worldAspect.WorldSize * worldAspect.WorldSize, Allocator.Temp);
 
             foreach (WorldTileAspect tile in SystemAPI.Query<WorldTileAspect>())
                 heights[(int)tile.Z * worldAspect.WorldSize + (int)tile.X] = tile.Y;

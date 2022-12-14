@@ -21,8 +21,8 @@ namespace Assets._Project._Scripts.World.Systems
             state.Enabled = false;
 
             PerlinNoiseEvaluator perlinNoiseEvaluator = new PerlinNoiseEvaluator(0);
-            HeightGeneratorComponent heightGenerator = SystemAPI.GetSingleton<HeightGeneratorComponent>(); 
-            
+            HeightGeneratorComponent heightGenerator = SystemAPI.GetSingleton<HeightGeneratorComponent>();
+
             foreach (WorldTileAspect tile in SystemAPI.Query<WorldTileAspect>())
                 tile.MoveToHeight(perlinNoiseEvaluator, heightGenerator);
         }

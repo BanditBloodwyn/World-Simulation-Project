@@ -1,5 +1,4 @@
 ﻿using Assets._Project._Scripts.World.Generators.Noise;
-using Unity.Collections;
 using Unity.Entities;
 
 namespace Assets._Project._Scripts.World.Components
@@ -8,6 +7,5 @@ namespace Assets._Project._Scripts.World.Components
     {
         public StandardNoiseFilterValues StandardNoiseFilterValues;
         public RigidNoiseFilterValues RigidNoiseFilterValues;
-        public NativeArray<int> PerlinNoiseSource;
     }
 }

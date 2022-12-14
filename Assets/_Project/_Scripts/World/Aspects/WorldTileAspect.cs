@@ -27,10 +27,8 @@ namespace Assets._Project._Scripts.World.Aspects
 
         private static float GetNoisedTileProperty(float x, float y, PerlinNoiseEvaluator perlinNoiseEvaluator, HeightGeneratorComponent heightGenerator)
         {
-            float standardNoisedValues = StandardNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), heightGenerator.StandardNoiseFilterValues, perlinNoiseEvaluator);
-            float rigidNoisedValues = RigidNoiseFilterEvaluator.Evaluate(new float3(x, 0, y), heightGenerator.RigidNoiseFilterValues, perlinNoiseEvaluator)
-                                      * standardNoisedValues;
-
+            float standardNoisedValues = heightGenerator.StandardNoiseFilterValues.Evaluate(new float3(x, 0, y), perlinNoiseEvaluator);
+            float rigidNoisedValues = heightGenerator.RigidNoiseFilterValues.Evaluate(new float3(x, 0, y), perlinNoiseEvaluator) * standardNoisedValues;
             return standardNoisedValues + rigidNoisedValues;
         }
     }
