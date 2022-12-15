@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9217515857709434033
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WorldMapMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 6d2052809f7bd1f4180aa505984dbbf0,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Alpine_BushesTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Alpine_TreesTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _KollineTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MontaneTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NivaleTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_38d2355535e4497c989427e03ed49dc4_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubalpineTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubnivaleTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _wavesNormal1:
+        m_Texture: {fileID: 2800000, guid: 7534295a69844ff45a97f8f780fe540a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _wavesNormal2:
+        m_Texture: {fileID: 2800000, guid: 3d9e2352f753b0140ab9669670b390aa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpine_BushesHeight: 0.8
+    - _Alpine_TreesHeight: 0.7
+    - _BIOME: 1
+    - _Boolean: 0
+    - _ENUM: 1
+    - _IsAlpine_Bushes: 0
+    - _IsAlpine_Trees: 0
+    - _IsKolline: 0
+    - _IsMontane: 0
+    - _IsNivale: 0
+    - _IsSubalpine: 0
+    - _IsSubnivale: 0
+    - _IsWater: 0
+    - _KollineHeight: 0.25
+    - _MontaneHeight: 0.45
+    - _NivaleHeight: 1
+    - _NormalStrength: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Sharpness: 0
+    - _SubalpineHeight: 0.6
+    - _SubnivaleHeight: 0.9
+    - _TileHeight: 0
+    - _WaterHeight: 0
+    m_Colors:
+    - _Alpine_BushesTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Alpine_BushesTint: {r: 0.3468653, g: 0.4716981, b: 0.34042364, a: 0}
+    - _Alpine_TreesTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Alpine_TreesTint: {r: 0.22647056, g: 0.3679245, b: 0.1995817, a: 0}
+    - _KollineTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _KollineTint: {r: 0.024435809, g: 0.6132076, b: 0, a: 0}
+    - _MontaneTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _MontaneTint: {r: 0.014288161, g: 0.4339623, b: 0, a: 0}
+    - _NivaleTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _NivaleTint: {r: 1, g: 1, b: 1, a: 0}
+    - _SubalpineTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _SubalpineTint: {r: 0.0447658, g: 0.33962262, b: 0, a: 0}
+    - _SubnivaleTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _SubnivaleTint: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0}
+    - _WaterTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _WaterTint: {r: 0.004444599, g: 0, b: 1, a: 0}
+  m_BuildTextureStacks: []

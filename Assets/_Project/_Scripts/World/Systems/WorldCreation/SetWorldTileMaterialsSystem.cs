@@ -24,7 +24,6 @@ namespace Assets._Project._Scripts.World.Systems
         {
         }
 
-        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             state.Enabled = false;

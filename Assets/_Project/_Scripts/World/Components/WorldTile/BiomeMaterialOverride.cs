@@ -3,9 +3,10 @@ using Unity.Rendering;
 
 namespace Assets._Project._Scripts.World.Components.WorldTile
 {
-    [MaterialProperty("_TileHeight")]
-    public struct WorldMaterialOverride : IComponentData
+
+    [MaterialProperty("_IsWater")]
+    public struct BiomeMaterialOverride : IComponentData
     {
-        public float Value;
+        public bool isWater;
     }
 }
