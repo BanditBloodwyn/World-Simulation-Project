@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Alpine_TreesTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 24dcde54a7067444297424853823ec2d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _KollineTexture:
@@ -114,7 +114,7 @@ Material:
     - _NormalStrength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Sharpness: 0.0592
+    - _Sharpness: 0.0513
     - _SubalpineHeight: 0.6
     - _SubnivaleHeight: 0.9
     - _TileHeight: 0
@@ -123,7 +123,7 @@ Material:
     - _Alpine_BushesTiling: {r: 2, g: 2, b: 0, a: 0}
     - _Alpine_BushesTint: {r: 1, g: 1, b: 1, a: 0}
     - _Alpine_TreesTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Alpine_TreesTint: {r: 0.193855, g: 0.3490566, b: 0.1728818, a: 0}
+    - _Alpine_TreesTint: {r: 0.67092824, g: 0.8207547, b: 0.65428084, a: 0}
     - _KollineTiling: {r: 2, g: 2, b: 0, a: 0}
     - _KollineTint: {r: 0.4906105, g: 0.990566, b: 0.4906105, a: 1}
     - _MontaneTiling: {r: 3, g: 3, b: 0, a: 0}
