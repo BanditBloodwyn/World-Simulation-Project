@@ -37,7 +37,7 @@ namespace Assets._Project._Scripts.World.Systems
                 float interpolation = GetInterpolation(tile.Y, minMax.Value1, minMax.Value2);
                 entityCommandBuffer.AddComponent(
                     tile.Entity,
-                    new WorldMaterialOverride { Value = interpolation });
+                    new VegetationZoneMaterialOverride { Value = interpolation });
             }
 
             entityCommandBuffer.Playback(state.EntityManager);

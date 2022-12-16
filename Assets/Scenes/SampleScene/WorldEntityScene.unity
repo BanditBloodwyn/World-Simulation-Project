@@ -195,3 +195,21 @@ MonoBehaviour:
     Roughness: 5
     Persistance: 0.7
     WeightMultiplier: 0.8
+  vegetationZoneHeights:
+  - VegetationZone: 0
+    MaximumHeight: 0
+  - VegetationZone: 1
+    MaximumHeight: 25
+  - VegetationZone: 2
+    MaximumHeight: 40
+  - VegetationZone: 3
+    MaximumHeight: 60
+  - VegetationZone: 4
+    MaximumHeight: 70
+  - VegetationZone: 5
+    MaximumHeight: 80
+  - VegetationZone: 6
+    MaximumHeight: 90
+  - VegetationZone: 7
+    MaximumHeight: 100
+  worldTileMaterial: {fileID: 2100000, guid: 2f6e0cd81cfa92d4f93b11e1551e55c8, type: 2}

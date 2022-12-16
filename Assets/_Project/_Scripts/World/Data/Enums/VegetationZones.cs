@@ -1,6 +1,6 @@
 ﻿namespace Assets._Project._Scripts.World.Data.Enums
 {
-    public enum Biomes
+    public enum VegetationZones
     {
         Water,
         Kolline,
