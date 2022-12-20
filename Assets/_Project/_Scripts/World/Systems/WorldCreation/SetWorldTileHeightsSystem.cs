@@ -5,7 +5,6 @@ using Unity.Entities;
 
 namespace Assets._Project._Scripts.World.Systems
 {
-    [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct SetWorldTileHeightsSystem : ISystem
     {
         public void OnCreate(ref SystemState state)

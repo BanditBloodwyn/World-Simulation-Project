@@ -1,4 +1,5 @@
 ﻿using Assets._Project._Scripts.World.Components.WorldCreator;
+using Assets._Project._Scripts.World.Components.WorldTile;
 using Assets._Project._Scripts.World.Generators.Noise;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -11,10 +12,13 @@ namespace Assets._Project._Scripts.World.Aspects
         public readonly Entity Entity;
 
         private readonly TransformAspect _transform;
+        private readonly RefRO<WorldTileHeightComponent> _tileHeight;
 
         public float X => _transform.LocalToWorld.Position.x;
-        public float Y => _transform.LocalToWorld.Position.y;
+        public float Height => _transform.LocalToWorld.Position.y;
         public float Z => _transform.LocalToWorld.Position.z;
+
+        public float3 Position => _transform.Position;
 
         public void MoveToHeight(PerlinNoiseEvaluator perlinNoiseEvaluator, HeightGeneratorComponent heightGenerator)
         {

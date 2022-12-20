@@ -8,7 +8,6 @@ using Unity.Transforms;
 
 namespace Assets._Project._Scripts.World.Systems
 {
-    [UpdateInGroup(typeof(InitializationSystemGroup))]
     [BurstCompile]
     public partial struct SpawnWorldTilesSystem : ISystem
     {

@@ -114,7 +114,7 @@ Material:
     - _NormalStrength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Sharpness: 0.0513
+    - _Sharpness: 0.0322
     - _SubalpineHeight: 0.6
     - _SubnivaleHeight: 0.9
     - _TileHeight: 0

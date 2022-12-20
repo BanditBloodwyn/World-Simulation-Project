@@ -1,4 +1,7 @@
 ﻿using Assets._Project._Scripts.World.Components.WorldCreator;
+using Assets._Project._Scripts.World.Data;
+using Assets._Project._Scripts.World.Data.Enums;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -17,6 +20,8 @@ namespace Assets._Project._Scripts.World.Aspects
 
         public Entity WorldTilePrefab => _worldProperties.ValueRO.WorldTilePrefab;
         
+        public NativeArray<VegetationZoneHeights> VegetationZoneHeights => _worldProperties.ValueRO.VegetationZoneHeights;
+
         public static UniformScaleTransform GetWorldTileTransform(float x, float y, float z)
         {
             return new UniformScaleTransform
@@ -26,5 +31,17 @@ namespace Assets._Project._Scripts.World.Aspects
                 Scale = 1f
             };
         }
+
+        public VegetationZones GetVegetationZone(float tileHeight)
+        {
+            foreach (VegetationZoneHeights vegetationZoneHeight in VegetationZoneHeights)
+            {
+                if (tileHeight <= vegetationZoneHeight.MaximumHeight / 100)
+                    return vegetationZoneHeight.VegetationZone;
+            }
+
+            return VegetationZones.Water;
+        }
+
     }
 }

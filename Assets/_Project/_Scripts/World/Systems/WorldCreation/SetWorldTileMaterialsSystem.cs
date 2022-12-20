@@ -1,6 +1,4 @@
-﻿using Assets._Project._Scripts.Core.Extentions;
-using Assets._Project._Scripts.Core.Types;
-using Assets._Project._Scripts.World.Aspects;
+﻿using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components.WorldCreator;
 using Assets._Project._Scripts.World.Components.WorldTile;
 using Unity.Burst;
@@ -9,8 +7,7 @@ using Unity.Entities;
 
 namespace Assets._Project._Scripts.World.Systems
 {
-    [UpdateInGroup(typeof(InitializationSystemGroup))]
-    [UpdateAfter(typeof(SetWorldTileHeightsSystem))]
+    [UpdateAfter(typeof(SpawnWorldMinMaxSystem))]
     [BurstCompile]
     public partial struct SetWorldTileMaterialsSystem : ISystem
     {
@@ -24,45 +21,25 @@ namespace Assets._Project._Scripts.World.Systems
         {
         }
 
+        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             state.Enabled = false;
 
-            SimpleTuple<float, float> minMax = GetMinMaxHeights(ref state);
+            Entity worldPropertiesEntity = SystemAPI.GetSingletonEntity<WorldTileHeightsMinMaxComponent>();
+            WorldMinMaxAspect minMaxAspect = SystemAPI.GetAspectRW<WorldMinMaxAspect>(worldPropertiesEntity);
 
             EntityCommandBuffer entityCommandBuffer = new(Allocator.Temp);
 
             foreach (WorldTileAspect tile in SystemAPI.Query<WorldTileAspect>())
             {
-                float interpolation = GetInterpolation(tile.Y, minMax.Value1, minMax.Value2);
+                float interpolation = minMaxAspect.GetInterpolation(tile.Height);
                 entityCommandBuffer.AddComponent(
                     tile.Entity,
                     new VegetationZoneMaterialOverride { Value = interpolation });
             }
 
             entityCommandBuffer.Playback(state.EntityManager);
-        }
-
-        [BurstCompile]
-        private SimpleTuple<float, float> GetMinMaxHeights(ref SystemState state)
-        {
-            Entity worldPropertiesEntity = SystemAPI.GetSingletonEntity<WorldPropertiesComponent>();
-            WorldAspect worldAspect = SystemAPI.GetAspectRW<WorldAspect>(worldPropertiesEntity);
-
-            NativeArray<float> heights = new(worldAspect.WorldSize * worldAspect.WorldSize, Allocator.Temp);
-
-            foreach (WorldTileAspect tile in SystemAPI.Query<WorldTileAspect>())
-                heights[(int)tile.Z * worldAspect.WorldSize + (int)tile.X] = tile.Y;
-
-            float minValue = heights.BurstMin();
-            float maxValue = heights.BurstMax();
-
-            return new SimpleTuple<float, float>(minValue, maxValue);
-        }
-
-        private static float GetInterpolation(float randomTileProperty, float minValue, float maxValue)
-        {
-            return 100 / (maxValue - minValue) * (randomTileProperty - minValue) / 100;
         }
     }
 }
