@@ -1,4 +1,5 @@
-﻿using Assets._Project._Scripts.World.Aspects;
+﻿using Assets._Project._Scripts.Core.ECS.Components;
+using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components.WorldCreator;
 using Assets._Project._Scripts.World.Components.WorldTile;
 using Unity.Burst;
@@ -46,6 +47,9 @@ namespace Assets._Project._Scripts.World.Systems
                     entityCommandBuffer.SetComponent(
                         newWorldTile,
                         new LocalToWorldTransform { Value = WorldAspect.GetWorldTileTransform(x, 0, z) });
+                    entityCommandBuffer.AddComponent(
+                        newWorldTile,
+                        new SelectableEntityTag());
                 }
             }
 
