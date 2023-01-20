@@ -25,7 +25,6 @@ namespace Assets._Project._Scripts.Managers
         {
             if (_entityWorld.IsCreated && _entityWorld.EntityManager.Exists(_inputBufferEntity))
                 _entityWorld.EntityManager.DestroyEntity(_inputBufferEntity);
-
         }
     }
 }
