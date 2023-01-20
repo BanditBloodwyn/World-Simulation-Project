@@ -3,7 +3,6 @@ using Assets._Project._Scripts.World.Data;
 using Assets._Project._Scripts.World.Data.Enums;
 using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace Assets._Project._Scripts.World.Aspects
@@ -21,16 +20,6 @@ namespace Assets._Project._Scripts.World.Aspects
         public Entity WorldTilePrefab => _worldProperties.ValueRO.WorldTilePrefab;
         
         public NativeArray<VegetationZoneHeights> VegetationZoneHeights => _worldProperties.ValueRO.VegetationZoneHeights;
-
-        public static UniformScaleTransform GetWorldTileTransform(float x, float y, float z)
-        {
-            return new UniformScaleTransform
-            {
-                Position = new float3(x, y, z),
-                Rotation = new quaternion(),
-                Scale = 1f
-            };
-        }
 
         public VegetationZones GetVegetationZone(float tileHeight)
         {

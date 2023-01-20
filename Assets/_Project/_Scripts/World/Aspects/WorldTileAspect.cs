@@ -14,19 +14,19 @@ namespace Assets._Project._Scripts.World.Aspects
         private readonly TransformAspect _transform;
         private readonly RefRO<WorldTileHeightComponent> _tileHeight;
 
-        public float X => _transform.LocalToWorld.Position.x;
-        public float Height => _transform.LocalToWorld.Position.y;
-        public float Z => _transform.LocalToWorld.Position.z;
+        public float X => _transform.LocalPosition.x;
+        public float Height => _transform.LocalPosition.y;
+        public float Z => _transform.LocalPosition.z;
 
         public float3 Position => _transform.Position;
 
         public void MoveToHeight(PerlinNoiseEvaluator perlinNoiseEvaluator, HeightGeneratorComponent heightGenerator)
         {
-            UniformScaleTransform localToWorldTransform = _transform.LocalToWorld;
+            float3 position = _transform.LocalPosition;
 
-            float height = GetNoisedTileProperty(localToWorldTransform.Position.x, localToWorldTransform.Position.z, perlinNoiseEvaluator, heightGenerator);
-            localToWorldTransform.Position.y = height;
-            _transform.LocalToWorld = localToWorldTransform;
+            float height = GetNoisedTileProperty(position.x, position.z, perlinNoiseEvaluator, heightGenerator);
+            position.y = height;
+            _transform.LocalPosition = position;
         }
 
         private static float GetNoisedTileProperty(float x, float y, PerlinNoiseEvaluator perlinNoiseEvaluator, HeightGeneratorComponent heightGenerator)

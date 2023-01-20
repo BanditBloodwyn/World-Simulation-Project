@@ -5,6 +5,7 @@ using Assets._Project._Scripts.World.Components.WorldTile;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace Assets._Project._Scripts.World.Systems
@@ -33,20 +34,23 @@ namespace Assets._Project._Scripts.World.Systems
             Entity worldPropertiesEntity = SystemAPI.GetSingletonEntity<WorldPropertiesComponent>();
             WorldAspect worldAspect = SystemAPI.GetAspectRW<WorldAspect>(worldPropertiesEntity);
 
-            EntityCommandBuffer entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
+            EntityCommandBuffer entityCommandBuffer = new(Allocator.Temp);
 
             for (int x = 0; x < worldAspect.WorldSize; x++)
             {
                 for (int z = 0; z < worldAspect.WorldSize; z++)
                 {
                     Entity newWorldTile = entityCommandBuffer.Instantiate(worldAspect.WorldTilePrefab);
-                    
+
                     entityCommandBuffer.AddComponent(
-                        newWorldTile, 
+                        newWorldTile,
                         new WorldTileHeightComponent());
                     entityCommandBuffer.SetComponent(
                         newWorldTile,
-                        new LocalToWorldTransform { Value = WorldAspect.GetWorldTileTransform(x, 0, z) });
+                        new Translation { Value = new float3(x, 0, z) });
+                    entityCommandBuffer.AddComponent(
+                        newWorldTile,
+                        new NonUniformScale { Value = new float3(1, 3, 1) });
                     entityCommandBuffer.AddComponent(
                         newWorldTile,
                         new SelectableEntityTag());

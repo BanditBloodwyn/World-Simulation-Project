@@ -8,7 +8,7 @@ namespace Assets._Project._Scripts.Camera
     {
         [SerializeField] private CameraMovementSettings MovementSettings;
         [SerializeField] private CameraRotationSettings RotationSettings;
-        [SerializeField] private UnityEvent<float> ShowSpeedEvent; 
+        [SerializeField] private UnityEvent<float> ShowSpeedEvent;
 
         private float _rotationX;
         private float _rotationY;
@@ -63,7 +63,7 @@ namespace Assets._Project._Scripts.Camera
                 _currentMaxSpeed += 5;
                 if (_currentMaxSpeed > MovementSettings.MaximumSpeed)
                     _currentMaxSpeed = MovementSettings.MaximumSpeed;
-               
+
                 ShowSpeedEvent?.Invoke(_currentMaxSpeed);
             }
 
@@ -72,7 +72,7 @@ namespace Assets._Project._Scripts.Camera
                 _currentMaxSpeed -= 5;
                 if (_currentMaxSpeed < MovementSettings.MinimalSpeed)
                     _currentMaxSpeed = MovementSettings.MinimalSpeed;
-               
+
                 ShowSpeedEvent?.Invoke(_currentMaxSpeed);
             }
         }
@@ -90,8 +90,8 @@ namespace Assets._Project._Scripts.Camera
             if (Input.GetKey(KeyCode.A))
                 translation += transform.right * -1;
 
-            _targetPosition += translation * _currentMaxSpeed * Time.deltaTime;
-            
+            _targetPosition += _currentMaxSpeed * Time.deltaTime * translation;
+
             LimitPosition(ref _targetPosition, MovementSettings.PositionLimit);
 
             transform.position = Vector3.SmoothDamp(
@@ -99,7 +99,6 @@ namespace Assets._Project._Scripts.Camera
                 _targetPosition,
                 ref _currentSpeed,
                 MovementSettings.Accelleration * Time.deltaTime);
-
         }
 
         private static void LimitPosition(ref Vector3 targetPosition, float limit)
@@ -108,7 +107,7 @@ namespace Assets._Project._Scripts.Camera
                 targetPosition.x = 0;
             if (targetPosition.x > limit)
                 targetPosition.x = limit;
-            
+
             if (targetPosition.y < 0)
                 targetPosition.y = 0;
 
