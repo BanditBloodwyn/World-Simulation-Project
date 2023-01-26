@@ -1,4 +1,4 @@
-using Assets._Project._Scripts.Gameplay.ECS.Systems.SelectionSystem;
+using Assets._Project._Scripts.Gameplay.SelectionSystem.Systems;
 using Unity.Assertions;
 using Unity.Entities;
 using Unity.Physics;

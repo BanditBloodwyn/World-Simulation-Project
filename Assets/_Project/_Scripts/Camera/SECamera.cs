@@ -1,4 +1,4 @@
-using Assets._Project._Scripts.World.Authoring;
+using Assets._Project._Scripts.World.ECS.Authoring;
 using UnityEngine;
 using UnityEngine.Events;
 
