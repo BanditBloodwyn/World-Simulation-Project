@@ -31,6 +31,5 @@ namespace Assets._Project._Scripts.World.Aspects
 
             return VegetationZones.Water;
         }
-
     }
 }

@@ -17,13 +17,6 @@ namespace Assets._Project._Scripts.Camera
         private Vector3 _targetPosition;
         private float _currentMaxSpeed;
 
-        //private void OnDrawGizmos()
-        //{
-        //    Gizmos.color = Color.red;
-        //    Gizmos.DrawSphere(_targetPosition, 1);
-        //    Gizmos.DrawLine(transform.position, _targetPosition);
-        //}
-
         private void Start()
         {
             MovementSettings.PositionLimit = FindObjectOfType<WorldPropertiesMono>().worldSize;

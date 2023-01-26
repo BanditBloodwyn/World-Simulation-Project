@@ -2,7 +2,7 @@
 
 namespace Assets._Project._Scripts.Core.ECS.Components
 {
-    public struct SelectedEntityTag : IComponentData
+    public struct EntitySelectionTag : IComponentData
     {
         
     }

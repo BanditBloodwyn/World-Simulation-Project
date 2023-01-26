@@ -408,7 +408,7 @@ MonoBehaviour:
     Accelleration: 20
     PositionLimit: 0
   RotationSettings:
-    LookSpeed: 2
+    LookSpeed: 0.5
     LookXLimit: 75
   ShowSpeedEvent:
     m_PersistentCalls:
@@ -578,39 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc0888a49c1b1e4eb327124743278c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    m_Name: Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 72e6aff0-4671-4cc4-904f-9752ff4ca51e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: One Modifier
-      m_Id: 95a35f63-35bd-4ee4-a08b-3a3551ca458d
-      m_Path: OneModifier
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input
-      m_Flags: 4
-    - m_Name: modifier
-      m_Id: 860af3d1-4726-4e4d-a32a-1db60c1a6d19
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input
-      m_Flags: 8
-    - m_Name: binding
-      m_Id: 941dec9e-636e-45af-ba08-bdff4fa3353e
-      m_Path: <Mouse>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input
-      m_Flags: 8
-    m_Flags: 0
   _camera: {fileID: 330585545}
 --- !u!1 &410087039
 GameObject:
