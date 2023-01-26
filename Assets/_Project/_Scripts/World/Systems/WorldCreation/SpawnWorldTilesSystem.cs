@@ -1,4 +1,4 @@
-﻿using Assets._Project._Scripts.Core.ECS.Components;
+﻿using Assets._Project._Scripts.Gameplay.ECS.Components;
 using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components.WorldCreator;
 using Assets._Project._Scripts.World.Components.WorldTile;

@@ -1,4 +1,4 @@
-﻿using Assets._Project._Scripts.Core.ECS.Aspects;
+﻿using Assets._Project._Scripts.Gameplay.ECS.Aspects;
 using Assets._Project._Scripts.World.Aspects;
 using Assets._Project._Scripts.World.Components.WorldCreator;
 using Assets._Project._Scripts.World.Components.WorldTile;
@@ -7,11 +7,10 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using Unity.Mathematics;
-using Unity.Rendering;
-using UnityEngine;
 using Unity.Transforms;
+using UnityEngine;
 
-namespace Assets._Project._Scripts.World.Systems.Gameplay.SelectionSystem
+namespace Assets._Project._Scripts.Gameplay.ECS.Systems.SelectionSystem
 {
     [BurstCompile]
     public partial struct EntitySelectionSystem : ISystem

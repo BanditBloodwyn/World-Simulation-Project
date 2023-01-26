@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-namespace Assets._Project._Scripts.Core.ECS.Components
+namespace Assets._Project._Scripts.Gameplay.ECS.Components
 {
     public struct EntitySelectionTag : IComponentData
     {
