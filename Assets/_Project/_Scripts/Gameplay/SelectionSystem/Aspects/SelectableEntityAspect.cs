@@ -2,6 +2,7 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Assets._Project._Scripts.Gameplay.SelectionSystem.Aspects
 {
@@ -13,6 +14,13 @@ namespace Assets._Project._Scripts.Gameplay.SelectionSystem.Aspects
 
         private readonly RefRO<SelectableEntityTag> _selectableTag;
 
-        public float3 Position => _transformAspect.Position;
+        public Bounds CreateBounds()
+        {
+            return new Bounds
+            {
+                center = _transformAspect.Position + math.up() * 1.45f,
+                size = new Vector3(1f, 0.1f, 1f)
+            };
+        }
     }
 }
